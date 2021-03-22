@@ -1,0 +1,22 @@
+{
+  "name": "ohmyfood-openclassrooms",
+  "version": "1.0.0",
+  "description": "Projet 3 parcours développeur web OpenClassrooms",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hikennn/ohmyfood-openclassrooms.git"
+  },
+  "author": "Gaubron Steven",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hikennn/ohmyfood-openclassrooms/issues"
+  },
+  "homepage": "https://github.com/Hikennn/ohmyfood-openclassrooms#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1"
+  }
+}

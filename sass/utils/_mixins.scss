@@ -1,0 +1,115 @@
+@mixin centered{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin shadow{
+    box-shadow: 0px 10px 23px -10px rgba(0,0,0,0.63);
+}
+
+@mixin btn {
+    color: white;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 21px;
+    font-size: 14px;
+    background: linear-gradient(-5deg, $color-primary, $color-secondary);
+    outline: none;
+    @include shadow;
+    border: none;
+    cursor: pointer;
+    &:hover{
+        box-shadow: 0px 10px 19px -7px rgba(0,0,0,0.63);
+        background: linear-gradient(-5deg, lighten($color-primary, 3%), lighten($color-secondary, 3%));
+    }
+}
+
+@mixin tag {
+    color: #008766;
+    background-color: $color-tertiary;
+    font-weight: bold;
+    font-size: .9rem;
+    border-radius: 3px;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+@mixin menu-underline {
+    border: 2px solid $color-tertiary;
+    width: 15%;
+    margin-top: 5px;
+}
+
+@mixin restaurant-card {
+    .restaurant__cards-container{
+        display: flex;
+        justify-content: center;
+        margin: 20px 0px;
+    }
+    .restaurant__card{
+        width: 410px;
+        margin: 20px;
+        border-radius: 30px;
+        &--image{
+            object-fit: cover;
+            height: 150px;
+            width: 100%;
+            border-radius: 15px 15px 0px 0px;
+        }
+        &--infos{
+            padding: 15px;
+            border-radius: 0px 0px 15px 15px;
+            @include shadow;
+        }
+    }
+}
+
+@mixin menu-card{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-shrink: 2;
+    font-size: 0.9rem;
+    margin-top: 15px;
+    border-radius: 10px;
+    box-shadow: -1px 0px 15px -8px rgba(0,0,0,0.75);
+    &--description{
+        width: 80%;
+        margin: 15px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        & h3, p{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+    &--price{
+        margin-top: 35px;
+        font-weight: bold;
+        color: #353535;
+    }
+    &--check{
+        color: white;
+        width: 0px;
+        height: 100%;
+        margin-left: 20px;
+        padding: 22px 0px 22px 0px;
+        text-align: center;
+        font-size: 20px;
+        border-radius: 0px 10px 10px 0px;
+        background: $color-tertiary;
+        transition-duration: 0.5s;
+    }
+    &:hover{
+        cursor: pointer;
+    }
+    &:hover .menu__card--check{
+        width: 100px;
+    }
+    &:hover .menu__card--check--icon{
+        animation: checkSpin 0.6s;
+    }
+}

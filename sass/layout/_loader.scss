@@ -1,0 +1,27 @@
+.loader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100%;
+    opacity: 0;
+    z-index: -10;
+    color: transparent;
+    position: fixed;
+    background-color: white;
+    animation: bg 1.5s;
+}
+.loader h1{
+    position: relative;
+    font-size: 3rem;
+    -webkit-text-stroke: 1px $color-secondary;
+    &::before{
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "ohmyfood";
+        color: $color-primary;
+        overflow: hidden;
+        animation: load 1.5s linear;
+    }
+}

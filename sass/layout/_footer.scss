@@ -1,0 +1,42 @@
+.footer{
+    background-color: #353535;
+    color: white;
+    padding: 20px;
+    margin-top: 60px;
+    @media screen and (min-width: 768px){
+        &__title{
+            text-align: center;
+        }
+        &__links ul{
+            display: flex;
+            justify-content: center;
+        }
+        &__links li{
+            margin-right: 20px;
+        }
+    }
+
+    &__links li{
+        margin-bottom: 5px;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    &__title{
+        font-family: 'Shrikhand', sans-serif;
+        margin-bottom: 20px;
+        font-size: 15px;
+    }
+    &__links--icon{
+        margin-right: 1rem;
+        &.hand{
+            margin-right: .5rem;
+        }
+    }
+    a{
+        color: white;
+    }
+    li{
+        list-style-type: none;
+    }
+}

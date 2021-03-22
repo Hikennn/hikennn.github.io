@@ -1,0 +1,148 @@
+.location{
+    @include centered;
+    background-color: #EAEAEA;
+    color: #4B4B4B;
+    font-weight: bold;
+    padding: 25px;
+    height: 30px;
+    &__icon{
+        margin-right: 10px;
+    }
+}
+
+.about{
+    &__explore{
+        @include centered;
+        flex-direction: column;
+        text-align: center;
+        padding: 45px 10px;
+        background-color: $color-background;
+        &h2{
+            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+            font-family: sans;
+            color: yellow;
+        }
+    }
+    &__explore p{
+        color: #353535;
+        margin: 10px 0px 20px 0px;
+    }
+
+    &__usage{
+        padding: 45px 10px;
+        @media screen and (min-width: 1200px){
+            ol{
+                display: flex;
+                justify-content: center;
+            }
+            li{
+                margin: 0px 50px;
+                width: 100%;
+            }
+        }
+        &--step{
+            position: relative;
+            background-color: $color-background;
+            display: flex;
+            justify-content: space-evenly;
+            padding: 30px;
+            font-weight: bold;
+            border-radius: 30px;
+            @include shadow;
+            margin: 20px 10px 10px 20px;
+            counter-increment: step-count;
+            @media screen and (min-width: 768px){
+                display: flex;
+                justify-content: space-evenly;
+                margin: 20px 150px;
+            }
+            &.pink{
+                background-color: #F5EDFF;
+            }
+            &::before{
+                content: counter(step-count) " ";
+                color: white;
+                background-color: $color-primary;
+                padding: 5px 10px;
+                border-radius: 50%;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translate(-50%, -50%);
+            }
+        }
+        &--step-icon{
+            font-size: 20px;
+            color: #7E7E7E;
+            &.pink{
+                color: $color-primary;
+            }
+        }
+    }
+}
+
+.restaurant{
+    background-color: $color-background;
+}
+.restaurant h2{
+    padding: 50px 0px 0px 10px;
+}
+.restaurant__cards-container{
+    @media screen and (min-width: 1200px) and (max-width: 1599px){
+        padding: 0px 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        .restaurant__card{
+            width: 500px;
+        }
+    }
+    @media screen and (min-width: 1600px) {
+        padding: 0px 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        .restaurant__card{
+            width: 600px;
+        }
+    }
+}
+.restaurant__card{
+    @include restaurant-card;
+    margin: 20px;
+    &--images{
+        position: relative;
+    }
+    &--infos{
+        display: flex;
+        justify-content: space-between;
+    }
+    &--favoris{
+        font-size: 25px;
+
+
+        margin-top: 6px;
+        margin-right: 10px;
+
+
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 1px black;
+        background-size: 25px 25px;
+        -webkit-background-clip: text;
+        background-position: 0 -25px;
+        &:hover{
+            background-image: -webkit-linear-gradient(-5deg, $color-primary, $color-secondary);
+            animation: favoris .4s;
+            animation-fill-mode: both;
+            animation-timing-function: ease-in-out;
+            cursor: pointer;
+        }
+    }
+}
+.tag{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+} 
